@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import RoutesApp from './Routes';
 
 const App = (props) => {
   return (
-    <div className='app'>
-      <h1>Encurta Link</h1>
-    </div>
-  )
-}
+    <section className="app">
+      <RoutesApp />
+    </section>
+  );
+};
 
-export default App
+export default App;
