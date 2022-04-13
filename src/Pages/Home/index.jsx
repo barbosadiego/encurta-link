@@ -4,6 +4,7 @@ import './home.css';
 import Menu from '../../Components/Menu';
 import LinkItem from '../../Components/LinkItem';
 import api from '../../Services/api';
+import { saveLink } from '../../Services/storedLinks';
 
 const Home = () => {
   const [link, setLink] = React.useState('');
@@ -17,9 +18,10 @@ const Home = () => {
       });
       setData(response.data);
       setShowModal(true);
+      saveLink('@encurtaLink', response.data)
       setLink('');
     } catch (error) {
-      alert('Ops, parece que algo deu errado.');
+      alert('Insira um link válido.');
       setLink('');
     }
   }
